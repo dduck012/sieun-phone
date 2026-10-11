@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 인터랙티브 포타</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-frame">
+        <!-- 상단 상태바 -->
+        <div class="status-bar">
+            <span class="carrier">KT</span>
+            <span class="time">9:57</span>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>🛜</span>
+                <span>🔋 94</span>
+            </div>
+        </div>
+
+        <!-- 홈 화면 -->
+        <div id="home-screen" class="screen active">
+            <!-- 네이버 검색창 위젯 -->
+            <div class="widget-search" onclick="openApp('naver')">
+                <span class="naver-logo">N</span>
+                <span class="mic-icon-right">🎤</span>
+            </div>
+
+            <!-- 미니 앱 4개 (비활성화) -->
+            <div class="mini-app-row">
+                <div class="mini-app-item disabled">
+                    <div class="mini-icon green-icon">📷</div>
+                    <span>스마트렌즈</span>
+                </div>
+                <div class="mini-app-item disabled">
+                    <div class="mini-icon green-icon">📍</div>
+                    <span>내주변</span>
+                </div>
+                <div class="mini-app-item disabled">
+                    <div class="mini-icon green-icon">📱</div>
+                    <span>현장결제</span>
+                </div>
+                <div class="mini-app-item disabled">
+                    <div class="mini-icon green-icon">💸</div>
+                    <span>송금</span>
+                </div>
+            </div>
+
+            <!-- 메인 앱 그리드 -->
+            <div class="main-app-grid">
+                <div class="app-item disabled">
+                    <div class="app-icon weather-bg">⛅</div>
+                    <span>날씨</span>
+                </div>
+                <div class="app-item disabled">
+                    <div class="app-icon clock-bg">⏰</div>
+                    <span>시계</span>
+                </div>
+                <div class="app-item" onclick="openApp('에브리타임')">
+                    <div class="app-icon every-bg">😊</div>
+                    <span>에브리타임</span>
+                </div>
+                <div class="app-item" onclick="openApp('Spotify')">
+                    <div class="app-icon spotify-bg">🎧</div>
+                    <span>Spotify</span>
+                </div>
+                <div class="app-item" onclick="openApp('넷플릭스')">
+                    <div class="app-icon netflix-bg">N</div>
+                    <span>넷플릭스</span>
+                </div>
+                <div class="app-item" onclick="openApp('캘린더')">
+                    <div class="app-icon calendar-bg">📅</div>
+                    <span>캘린더</span>
+                </div>
+            </div>
+
+            <!-- 페이지 인디케이터 -->
+            <div class="page-indicator">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+
+            <!-- 하단 독바 (메시지만 활성화) -->
+            <div class="app-dock">
+                <div class="dock-item disabled">📞</div>
+                <div class="dock-item disabled">👤</div>
+                <div class="dock-item" onclick="openApp('문자')">💬</div>
+                <div class="dock-item disabled">📷</div>
+                <div class="dock-item disabled">🌸</div>
+            </div>
+
+            <!-- 하단 내비게이션 바 -->
+            <div class="nav-bar">
+                <span class="nav-btn">❚❚❚</span>
+                <span class="nav-btn circle" onclick="goHome()">⚪</span>
+                <span class="nav-btn" onclick="goHome()">ᐸ</span>
+            </div>
+        </div>
+
+        <!-- 각 앱 실행 화면 -->
+        <div id="app-screen" class="screen">
+            <div class="app-header">
+                <button class="back-btn" onclick="goHome()">◀ 뒤로가기</button>
+                <h2 id="app-title">앱 이름</h2>
+            </div>
+            <div class="app-body" id="app-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
